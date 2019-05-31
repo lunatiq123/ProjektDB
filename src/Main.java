@@ -13,7 +13,7 @@ public class Main {
 
         while (true) {
 
-            System.out.println("P-pokaz, D-dodaj, U-usun, Z-zmien, K-koniec");
+            System.out.println("P-pokaz, D-dodaj, U-usun, Z-zmien, S-szukaj, K-koniec");
             String dec = input.nextLine().toUpperCase();
 
             if (dec.equals("P")) {
@@ -32,14 +32,36 @@ public class Main {
             }
             if (dec.equals("U")) {
                 System.out.println("Podaj ID do usuniecia");
-                String ID = input.nextLine();
+                int ID = input.nextInt();
+                input.nextLine();
                 controller.del(ID);
 
             }
             if (dec.equals("Z")) {
-                break;
+                System.out.println("Podaj ID do zmiany");
+                int id = input.nextInt();
+                input.nextLine();
+                System.out.println("Podaj nazwę kolumny do edycji");
+                String kolumna = input.nextLine();
+                System.out.println("Podaj nową wartość");
+                String wartosc = input.nextLine();
+                controller.mod(id, kolumna, wartosc);
+            }
+            if (dec.equals("S")) {
+                System.out.println("Podaj wyszukiwaną frazę ");
+                String szukana = input.nextLine();
+
+                controller.search(szukana);
+
+
+
+
+
             }
 
+            if (dec.equals("K")) {
+                break;
+            }
 
         }
     }
