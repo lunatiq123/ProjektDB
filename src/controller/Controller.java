@@ -99,6 +99,9 @@ public class Controller {
                     + rs.getString("nazwisko") + " " + rs.getString("telefon"));
         }
 
+        st.close();
+
+
     }
 
 
