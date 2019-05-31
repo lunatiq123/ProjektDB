@@ -88,15 +88,16 @@ public class Controller {
 
     public void search (String szukana) throws SQLException {
 
-        String sql = "SELECT * FROM kontakty WHERE %szukana%";
+        String sql = "SELECT * FROM kontakty WHERE imie LIKE '%"+szukana+"%' OR nazwisko LIKE '%"+szukana+"%' OR telefon LIKE '%"+szukana+"%'";
         Statement st = dao.getCon().createStatement();
         ResultSet rs = st.executeQuery(sql);
+
+
 
         while (rs.next()) {
             System.out.println(rs.getInt("ID") + " " + rs.getString("imie") + " "
                     + rs.getString("nazwisko") + " " + rs.getString("telefon"));
         }
-        
 
     }
 

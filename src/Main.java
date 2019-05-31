@@ -50,12 +50,7 @@ public class Main {
             if (dec.equals("S")) {
                 System.out.println("Podaj wyszukiwaną frazę ");
                 String szukana = input.nextLine();
-
                 controller.search(szukana);
-
-
-
-
 
             }
 
